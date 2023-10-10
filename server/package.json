@@ -2,12 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "npx tsc",
-	"start": "node index.ts",
-	"dev": "concurrently \"npx tsc --watch\" \"nodemon -q index.js\"
+    "build": "npx tsc",
+    "start": "node dist/index.ts",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "keywords": [],
   "author": "",
