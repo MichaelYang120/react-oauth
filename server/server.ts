@@ -2,6 +2,8 @@ import express from	'express';
 import mongoose from 'mongoose';
 import {} from 'dotenv/config';
 import { createUser } from './models/User';
+import bodyParser from 'body-parser';
+import cors from 'cors';
 
 require("dotenv").config();
 
@@ -13,8 +15,11 @@ const app = express();
 const debug:boolean = true;
 // const debug:boolean = false;
 
-app.use(express.json());
+//app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
 
 if(debug) {
 	console.log(uri + " sdf " + port);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "../components/Inputs";
+import { createUser } from "../helpers/api";
 
 export default function Home() {
 	const [name, setName] = useState<string>('');
@@ -15,6 +16,8 @@ export default function Home() {
 		}
 		if(name.length != 0 && email.length != 0 && password.length != 0) {
 			console.log('Name: ' + name + '\nEmail: ' + email + '\nPassword: ' + password);
+			createUser('user', name, email, password);
+
 			setIsSignedIn(true);
 	
 		}
